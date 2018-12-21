@@ -24,12 +24,18 @@ class Sesion extends Conexion {
     }
 
     
-    public function validarSesion() {
+     public function validarSesion() {
         try {
+            
+            
             $sql = "select * from f_validar_sesion(:p_usuario, :p_clave);";
             $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_usuario", $this->getUsuario());
-            $sentencia->bindParam(":p_clave", $this->getClave());
+            
+            $usuario= $this->getUsuario();
+            $clave= $this->getClave();
+            
+            $sentencia->bindParam(":p_usuario", $usuario);
+            $sentencia->bindParam(":p_clave", $clave);
             $sentencia->execute();
             return $sentencia->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $exc) {
