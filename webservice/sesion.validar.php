@@ -8,7 +8,7 @@ if (! isset($_POST["usuario"]) || ! isset($_POST["clave"])){
     exit();
 }
 
-$email = $_POST["usuario"];
+$usuario = $_POST["usuario"];
 $clave = $_POST["clave"];
 
 
