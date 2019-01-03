@@ -280,7 +280,7 @@ class Cliente extends Conexion {
 		    lower(ccod_cliente) like :p_cod ";
             
             $sentencia = $this->dblink->prepare($sql);
-            $nombre = '%'.  strtolower($cod).'%';
+            $cod = '%'.  strtolower($cod).'%';
             $sentencia->bindParam(":p_cod", $cod);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
