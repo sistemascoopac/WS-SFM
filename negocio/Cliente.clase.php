@@ -15,6 +15,20 @@ class Cliente extends Conexion {
     private $lbaja;
     private $lat_dir;
     private $long_dir;
+    private $ingresos;
+    private $dependientes;
+    
+    
+    
+    function getIngresos() {
+        return $this->ingresos;
+    }
+
+    function getDependientes() {
+        return $this->dependientes;
+    }
+
+    
     
     function getCcod_cliente() {
         return $this->ccod_cliente;
@@ -102,6 +116,14 @@ class Cliente extends Conexion {
 
     function setLong_dir($long_dir) {
         $this->long_dir = $long_dir;
+    }
+	
+	function setIngresos($ingresos) {
+        $this->ingresos = $ingresos;
+    }
+
+    function setDependientes($dependientes) {
+        $this->dependientes = $dependientes;
     }
 
             
@@ -245,7 +267,9 @@ class Cliente extends Conexion {
                 (cnom_cliente ||' '||capp_cliente||' '||capm_cliente ) ::character varying as nombre_completo,
                 cdni_cliente,
                 cdir_cliente,
-                ctel_cliente         
+                ctel_cliente ,
+		ingreso,
+		dependientes
                 from
                 cliente  
 		where 
@@ -272,7 +296,9 @@ class Cliente extends Conexion {
                 (cnom_cliente ||' '||capp_cliente||' '||capm_cliente ) ::character varying as nombre_completo,
                 cdni_cliente,
                 cdir_cliente,
-                ctel_cliente         
+                ctel_cliente,
+		ingreso,
+		dependientes
                 from
                 cliente  
 		where 
