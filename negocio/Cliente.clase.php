@@ -318,6 +318,25 @@ class Cliente extends Conexion {
         }
             
     }
+	
+	
+	public function  obtenerFoto($ccod){
+        $foto = "../imagenes-socios/".$ccod;
+        if(file_exists($foto.".jpg")){
+            $foto = $foto.".jpg";
+        }else{
+            if(file_exists($foto.".png")){
+                $foto = $foto.".png";
+            }else{
+                $foto = "none";
+            }
+        }
+        if($foto == "none"){
+            return $foto;
+        }else{
+            return Funciones::$DIRECCION_WEB_SERVICE.$foto;
+        }
+    }
 }
 
 
