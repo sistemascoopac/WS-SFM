@@ -127,7 +127,7 @@ class Cliente extends Conexion {
     }
 
             
-    public function listar( ) {
+    public function listar( $p_ccod_cliente) {
         try {
             $sql = "
                 select 
@@ -135,17 +135,18 @@ class Cliente extends Conexion {
                 (cnom_cliente ||' '||capp_cliente||' '||capm_cliente ) ::character varying as nombre_completo,
                 cdni_cliente,
                 cdir_cliente,
-                ctel_cliente ,
+                ctel_cliente,
 		ingreso,
 		dependientes
                 from
                 cliente  
 		where 
-                lbaja='0'
+                lbaja='0' and ccod_cliente = :p_ccod_cliente
 
 
                     ";
             $sentencia = $this->dblink->prepare($sql);
+	   $sentencia->bindParam(":p_ccod_cliente", $p_ccod_cliente);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;
