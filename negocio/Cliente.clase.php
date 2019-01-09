@@ -131,17 +131,17 @@ class Cliente extends Conexion {
         try {
             $sql = "
                 select 
-                id_cliente,
-                (nombres ||' '||apellidos ) ::character varying as nombre_completo,
-                direccion,
-                telef_fijo,
-                num_cel1,
-                email,
-                (case when estado=1 then 'activo' else 'inactivo' end)::character varying as estado
+                ccod_cliente,
+                (cnom_cliente ||' '||capp_cliente||' '||capm_cliente ) ::character varying as nombre_completo,
+                cdni_cliente,
+                cdir_cliente,
+                ctel_cliente ,
+		ingreso,
+		dependientes
                 from
-                cliente
-                where
-                estado=1
+                cliente  
+		where 
+                lbaja='0'
 
 
                     ";
