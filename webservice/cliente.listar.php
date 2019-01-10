@@ -23,14 +23,15 @@ try {
             $foto = $obj->obtenerFoto($resultado[$i]["ccod_cliente"]);
             
         $datosSocios = array(
-            "ccod_cliente" => $resultado[$i]["ccod_cliente"]
-            "nombre_completo" => $resultado[$i]["nombre_completo"]
-            "ccod_cliente" => $resultado[$i]["ccod_cliente"]
-            "cdni_cliente" => $resultado[$i]["cdni_cliente"]
-            "cdir_cliente" => $resultado[$i]["cdir_cliente"]
-            "ctel_cliente" => $resultado[$i]["ctel_cliente"]
-            "dependientes" => $resultado[$i]["dependientes"]
-            "ingresos" => $resultado[$i]["ingreso"]
+            "ccod_cliente" => $resultado[$i]["ccod_cliente"],
+            "nombre_completo" => $resultado[$i]["nombre_completo"],
+            "ccod_cliente" => $resultado[$i]["ccod_cliente"],
+            "cdni_cliente" => $resultado[$i]["cdni_cliente"],
+            "cdir_cliente" => $resultado[$i]["cdir_cliente"],
+            "ctel_cliente" => $resultado[$i]["ctel_cliente"],
+            "dependientes" => $resultado[$i]["dependientes"],
+            "ingresos" => $resultado[$i]["ingreso"],
+            "foto" => $foto;
           );  
             
             $listaSocio[$i] = $datosSocios;
