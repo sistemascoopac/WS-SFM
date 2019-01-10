@@ -17,12 +17,10 @@ try {
         $obj = new Cliente();
         
         $resultado = $obj->Listar($p_ccod_cliente);
-        $foto = $obj->obtenerFoto($p_ccod_cliente);
-        $resultado["foto"] = $foto;
+        //$foto = $obj->obtenerFoto($p_ccod_cliente);
+        //$resultado["foto"] = $foto;
     //$resultado["gg"]="ohno";
         Funciones::imprimeJSON(200, "", $resultado);
-    }else{
-        Funciones::imprimeJSON(500, "", "");
     }
     
 } catch (Exception $exc) {
