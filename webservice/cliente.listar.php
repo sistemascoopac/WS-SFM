@@ -19,7 +19,7 @@ try {
         $resultado = $obj->Listar($p_ccod_cliente);
         $listaSocio = array();
         
-        for($i=0; $i < count($resultado); $i++){
+        for($i = 0; $i < count($resultado); $i++){
             $foto = $obj->obtenerFoto($resultado[$i]["ccod_cliente"]);
             
         $datosSocios = array(
