@@ -15,7 +15,8 @@ try {
     if(validarToken($token)){
         $obj = new Cliente();
         $resultado = $obj->cargarDatosClienteNombre($p_nombre);
-         
+          $foto = $obj->obtenerFoto($p_ccod_cliente);
+        $resultado["foto"] = $foto;
         Funciones::imprimeJSON(200, "", $resultado);
     }
     
