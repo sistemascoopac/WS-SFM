@@ -16,7 +16,7 @@ try {
     if(validarToken($token)){
         $obj = new Cliente();
         
-        $resultado = $obj->Listar($p_ccod_cliente);
+       // $resultado = $obj->Listar($p_ccod_cliente);
         $foto = $obj->obtenerFoto($p_ccod_cliente);
         $resultado["foto"] = $foto;
     //$resultado["gg"]="ohno";
