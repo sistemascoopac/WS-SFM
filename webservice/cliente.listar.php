@@ -12,16 +12,19 @@ if (! isset($_POST["token"])){
 $token = $_POST["token"];
 $p_ccod_cliente = $_POST["p_ccod_cliente"];
 try {
-    $obj = new Cliente();
+    
+    
     
     if(validarToken($token)){
+        $obj = new Cliente();
         $foto = $obj->obtenerFoto($p_ccod_cliente);
-        $resultado["foto"] = $foto;
+    $resultado["foto"] = $foto;
         $resultado = $obj->Listar($p_ccod_cliente);
         
         Funciones::imprimeJSON(200, "", $resultado);
+    }else{
+        Funciones::imprimeJSON(500, "", "");
     }
-    
     
 } catch (Exception $exc) {
     
