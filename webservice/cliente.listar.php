@@ -20,8 +20,8 @@ try {
         $foto = $obj->obtenerFoto($p_ccod_cliente);
         $resultado["foto"] = $foto;
     //$resultado["gg"]="ohno";
-       // Funciones::imprimeJSON(200, "", $resultado);
-        return $resultado;
+        Funciones::imprimeJSON(200, "", $resultado);
+       
     }
     
 } catch (Exception $exc) {
