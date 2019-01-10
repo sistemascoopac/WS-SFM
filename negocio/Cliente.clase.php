@@ -281,7 +281,7 @@ class Cliente extends Conexion {
             $nombre = '%'.  strtolower($nombre).'%';
             $sentencia->bindParam(":p_nombre", $nombre);
             $sentencia->execute();
-            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
 
             return $resultado;
         } catch (Exception $exc) {
@@ -310,7 +310,7 @@ class Cliente extends Conexion {
             $cod = '%'.  strtolower($cod).'%';
             $sentencia->bindParam(":p_cod", $cod);
             $sentencia->execute();
-            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
 
             return $resultado;
         } catch (Exception $exc) {
