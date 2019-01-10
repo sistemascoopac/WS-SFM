@@ -148,7 +148,7 @@ class Cliente extends Conexion {
             $sentencia = $this->dblink->prepare($sql);
 	   $sentencia->bindParam(":p_ccod_cliente", $p_ccod_cliente);
             $sentencia->execute();
-            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
             return $resultado;
             
         } catch (Exception $exc) {
