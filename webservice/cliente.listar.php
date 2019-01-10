@@ -18,7 +18,8 @@ try {
         
         $resultado = $obj->Listar($p_ccod_cliente);
         $foto = $obj->obtenerFoto($p_ccod_cliente);
-        $resultado["foto"] = $foto;
+       // $resultado["foto"] = $foto;
+    $resultado["gg"]="ohno";
         Funciones::imprimeJSON(200, "", $resultado);
    // }else{
        // Funciones::imprimeJSON(500, "", "");
