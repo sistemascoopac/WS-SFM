@@ -31,7 +31,7 @@ try {
             "ctel_cliente" => $resultado[$i]["ctel_cliente"],
             "dependientes" => $resultado[$i]["dependientes"],
             "ingresos" => $resultado[$i]["ingreso"],
-            "foto" => $foto;
+            "foto" => $foto
           );  
             
             $listaSocio[$i] = $datosSocios;
