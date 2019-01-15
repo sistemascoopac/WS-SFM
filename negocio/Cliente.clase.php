@@ -137,6 +137,8 @@ class Cliente extends Conexion {
                 cdir_cliente,
                 ctel_cliente,
 		ingreso,
+		latitud,
+		longitud,
 		dependientes
                 from
                 cliente  
@@ -270,6 +272,8 @@ class Cliente extends Conexion {
                 cdir_cliente,
                 ctel_cliente ,
 		ingreso,
+		latitud,
+		longitud,
 		dependientes
                 from
                 cliente  
@@ -299,6 +303,8 @@ class Cliente extends Conexion {
                 cdir_cliente,
                 ctel_cliente,
 		ingreso,
+		latitud,
+		longitud,
 		dependientes
                 from
                 cliente  
