@@ -29,6 +29,8 @@ try {
             "ctel_cliente" => $resultado[$i]["ctel_cliente"],
             "dependientes" => $resultado[$i]["dependientes"],
             "ingresos" => $resultado[$i]["ingreso"],
+            "lat_dir" => $resultado[$i]["lat_dir"],
+            "long_dir" => $resultado[$i]["long_dir"],
             "foto" => $foto
           );  
             
