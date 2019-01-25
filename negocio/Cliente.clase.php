@@ -17,6 +17,8 @@ class Cliente extends Conexion {
     private $long_dir;
     private $ingresos;
     private $dependientes;
+    private $latitud;
+    private $longitud;
     
     
     
@@ -73,6 +75,23 @@ class Cliente extends Conexion {
     function getLong_dir() {
         return $this->long_dir;
     }
+	
+    function getLatitud() {
+        return $this->latitud;
+    }
+
+    function getLongitud() {
+        return $this->longitud;
+    }	
+	
+	
+    function setLatitud($latitud) {
+        $this->latitud = $latitud;
+    }
+
+    function setLongitud($longitud) {
+        $this->longitud = $longitud;
+    }	
 
     function setCcod_cliente($ccod_cliente) {
         $this->ccod_cliente = $ccod_cliente;
@@ -176,6 +195,54 @@ class Cliente extends Conexion {
         
         return false;
     }
+	
+		
+	public function editar_socio(){
+         try{
+             $sql=" UPDATE public.cliente
+                     SET  
+                        cdir_cliente= :p_dir,
+                        ctel_cliente= :p_ctel,
+                        ingreso= :p_ing,
+                        dependientes= :p_dep,
+                        latitud= :p_lati, 
+                        longitud= :p_longi
+                    WHERE ccod_cliente= :p_cod ";
+             
+             $sentencia = $this->dblink->prepare($sql);
+             
+             $p_dir = $this->getCdir_cliente();
+             $p_ctel = $this->getCtel_cliente();
+             $p_ing = $this->getIngreso();
+             $p_dep = $this->getDependientes();
+             $p_lati = $this->getLatitud();
+             $p_longi = $this->getLongitud();
+             $p_cod = $this->getCcod_cliente();  
+                          
+             
+            $sentencia->bindParam(":p_dir", $p_dir);
+            $sentencia->bindParam(":p_ctel", $p_ctel);
+            $sentencia->bindParam(":p_ing", $p_ing);
+            $sentencia->bindParam(":p_dep", $p_dep);
+            $sentencia->bindParam(":p_lati", $p_lati);
+            $sentencia->bindParam(":p_longi", $p_longi);
+            $sentencia->bindParam(":p_cod", $p_cod);
+            
+            $sentencia->execute();
+            
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            
+             $this->dblink->commit();
+                
+                return true;
+             
+         } catch (Exception $exc) {
+             throw $exc;
+         }
+        }
+	
+	
+	
     
     public function agregar() {
         $this->dblink->beginTransaction();
