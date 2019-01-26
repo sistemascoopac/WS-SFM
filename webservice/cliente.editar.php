@@ -13,23 +13,23 @@ require_once '../util/funciones/Funciones.clase.php';
 try {
    //if(validarToken($token)){ //token válido
      $p_dir=$_POST["p_dir"];
-     $p_ctel=$_POST["p_ctel"];
-     $p_ing=$_POST["p_ing"];
-     $p_dep=$_POST[":p_dep"];
-     $p_lati=$_POST[":p_lati"];
-     $p_longi=$_POST[":p_longi"];
-     $p_cod=$_POST[":p_cod"];
+    // $p_ctel=$_POST["p_ctel"];
+    // $p_ing=$_POST["p_ing"];
+    // $p_dep=$_POST[":p_dep"];
+    // $p_lati=$_POST[":p_lati"];
+    // $p_longi=$_POST[":p_longi"];
+    // $p_cod=$_POST[":p_cod"];
      
      
      
      $obj = new Cliente();
      $obj->setCdir_cliente($p_dir);
-     $obj->setCtel_cliente($p_ctel);
-     $obj->setIngreso($p_ing);
-     $obj->setDependientes($p_dep);
-     $obj->setLatitud($p_lati);
-     $obj->setLongitud($p_longi);
-     $obj->setCcod_cliente($p_cod);
+    // $obj->setCtel_cliente($p_ctel);
+    // $obj->setIngreso($p_ing);
+   //  $obj->setDependientes($p_dep);
+   //  $obj->setLatitud($p_lati);
+   //  $obj->setLongitud($p_longi);
+    // $obj->setCcod_cliente($p_cod);
      
     
      
@@ -46,6 +46,6 @@ try {
     if($position>0){
         $mensajeError = substr($mensajeError, $position+27, strlen($mensajeError));
     }
-    
+    Funciones::imprimeJSON(500, "poque", "asas1");
     Funciones::imprimeJSON(500, $mensajeError, "asas");
 }
