@@ -33,7 +33,7 @@ try {
      
     
      
-     $resultado=$obj->editar_socio();
+     //$resultado=$obj->editar_socio();
              
      
     
