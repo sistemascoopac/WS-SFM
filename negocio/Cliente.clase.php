@@ -199,34 +199,18 @@ class Cliente extends Conexion {
 		
 	public function editar_socio(){
          try{
-             $sql=" UPDATE public.cliente
-                     SET  
-                        cdir_cliente= :p_dir,
-                        ctel_cliente= :p_ctel,
-                        ingreso= :p_ing,
-                        dependientes= :p_dep,
-                        latitud= :p_lati, 
-                        longitud= :p_longi
-                    WHERE ccod_cliente= :p_cod ";
+		 $sql="
+             UPDATE public.cliente
+   SET  
+	cdir_cliente='Santa Rosa S/N2',
+	ctel_cliente='990990991',
+	ingreso=3456.00,
+        dependientes=4
+ WHERE ccod_cliente='0000009999'";
              
              $sentencia = $this->dblink->prepare($sql);
              
-             $p_dir = $this->getCdir_cliente();
-             $p_ctel = $this->getCtel_cliente();
-             $p_ing = $this->getIngreso();
-             $p_dep = $this->getDependientes();
-             $p_lati = $this->getLatitud();
-             $p_longi = $this->getLongitud();
-             $p_cod = $this->getCcod_cliente();  
-                          
              
-            $sentencia->bindParam(":p_dir", $p_dir);
-            $sentencia->bindParam(":p_ctel", $p_ctel);
-            $sentencia->bindParam(":p_ing", $p_ing);
-            $sentencia->bindParam(":p_dep", $p_dep);
-            $sentencia->bindParam(":p_lati", $p_lati);
-            $sentencia->bindParam(":p_longi", $p_longi);
-            $sentencia->bindParam(":p_cod", $p_cod);
             
             $sentencia->execute();
             
