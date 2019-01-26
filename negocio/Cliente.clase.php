@@ -230,7 +230,7 @@ class Cliente extends Conexion {
             
             $sentencia->execute();
             
-            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+           // $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             
              $this->dblink->commit();
                 
