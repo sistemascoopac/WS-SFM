@@ -47,5 +47,5 @@ try {
         $mensajeError = substr($mensajeError, $position+27, strlen($mensajeError));
     }
     
-    Funciones::imprimeJSON(500, $mensajeError, "");
+    Funciones::imprimeJSON(500, $mensajeError, "asas");
 }
