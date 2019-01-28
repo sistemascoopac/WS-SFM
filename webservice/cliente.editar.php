@@ -26,10 +26,10 @@ try {
      $obj->setCdir_cliente($p_dir);
      $obj->setCtel_cliente($p_ctel);
      $obj->setIngreso($p_ing);
-     $obj->setDependientes($p_dep);
-     $obj->setLatitud($p_lati);
-     $obj->setLongitud($p_longi);
-     $obj->setCcod_cliente($p_cod);
+    // $obj->setDependientes($p_dep);
+    // $obj->setLatitud($p_lati);
+     //$obj->setLongitud($p_longi);
+    // $obj->setCcod_cliente($p_cod);
      
     
      
