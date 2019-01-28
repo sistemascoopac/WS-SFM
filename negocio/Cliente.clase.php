@@ -244,6 +244,7 @@ class Cliente extends Conexion {
 		 $this->dblink->rollBack();
              throw $exc;
          }
+		 return false;
         }
 	
 	
