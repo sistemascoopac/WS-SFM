@@ -35,9 +35,14 @@ try {
      
      $resultado=$obj->editar_socio();
              
-     
+     if($resultado==true){
+         Funciones::imprimeJSON(200, "cliente_editar_ok_ntbs", $resultado);
+     }else{
+      Funciones::imprimeJSON(500, "cliente_no_se_edito", $resultado);   
+     }
+       
     
-       Funciones::imprimeJSON(200, "cliente_editar_ok_ntbs", $resultado);
+       
        
    }
 } catch (Exception $exc) {
