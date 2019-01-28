@@ -201,16 +201,17 @@ class Cliente extends Conexion {
 		$this->dblink->beginTransaction();
          try{
 		 
-              $sql=" UPDATE public.cliente 
-                      SET  
-                        cdir_cliente= :p_dir, 
-                        ctel_cliente= :p_ctel, 
-                        ingreso= :p_ing, 
-                        dependientes= :p_dep, 
-                        latitud= :p_lati ,  
-                        longitud= :p_longi 
-                     WHERE ccod_cliente= :p_cod ";
-";
+              $sql=" 
+	      UPDATE public.cliente SET  cdir_cliente= :p_dir ,
+	      ctel_cliente= :p_ctel ,
+	      ingreso= :p_ing ,
+	      dependientes= :p_dep , 
+	      latitud= :p_lati ,
+	      longitud= :p_longi
+	      WHERE ccod_cliente= :p_cod 
+			
+			";
+
              
              $sentencia = $this->dblink->prepare($sql);
              
