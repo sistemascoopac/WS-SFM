@@ -198,6 +198,7 @@ class Cliente extends Conexion {
 	
 		
 	public function editar_socio(){
+		$this->dblink->beginTransaction();
          try{
 		 
               $sql="UPDATE public.cliente "
@@ -238,6 +239,7 @@ class Cliente extends Conexion {
                 return true;
              
          } catch (Exception $exc) {
+		 $this->dblink->rollBack();
              throw $exc;
          }
         }
