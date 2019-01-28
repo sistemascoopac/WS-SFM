@@ -212,7 +212,22 @@ class Cliente extends Conexion {
              
              $sentencia = $this->dblink->prepare($sql);
              
+             $p_dir = $this->getCdir_cliente();
+             $p_ctel = $this->getCtel_cliente();
+             $p_ing = $this->getIngresos();
+             $p_dep = $this->getDependientes();
+             $p_lati = $this->getLatitud();
+             $p_longi = $this->getLongitud();
+             $p_cod = $this->getCcod_cliente();  
+                          
              
+            $sentencia->bindParam(":p_dir", $p_dir);
+            $sentencia->bindParam(":p_ctel", $p_ctel);
+            $sentencia->bindParam(":p_ing", $p_ing);
+            $sentencia->bindParam(":p_dep", $p_dep);
+            $sentencia->bindParam(":p_lati", $p_lati);
+            $sentencia->bindParam(":p_longi", $p_longi);
+            $sentencia->bindParam(":p_cod", $p_cod);
             
             $sentencia->execute();
             
