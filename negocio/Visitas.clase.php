@@ -101,11 +101,11 @@ class Visitas extends Conexion {
                 $sentencia = $this->dblink->prepare($sql);
                 
                 //$ccod_visitas = $this->ccod_visitas();
-                $ccod_cliente = $this->ccod_cliente();
-                $lat_dir = $this->lat_dir();
-                $long_dir = $this->long_dir();
-                $foto= $this->foto();
-                $ccod_empleado= $this->ccod_empleado();
+                 $ccod_cliente = $this->getCcod_cliente();
+                $lat_dir = $this->getLat_dir();
+                $long_dir = $this->getLong_dir();
+                $foto= $this->getFoto();
+                $ccod_empleado= $this->getCcod_empleado();
                 
                 
                 
