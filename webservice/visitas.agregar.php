@@ -30,7 +30,7 @@ try {
      $obj->setCcod_empleado($ccod_empleado);
      
      
-     //$resultado=$obj->agregar_visitas();
+     $resultado=$obj->agregar_visitas();
              
      
     
