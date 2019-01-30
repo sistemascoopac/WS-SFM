@@ -100,7 +100,7 @@ class Visitas extends Conexion {
                 //Preparar la sentencia
                 $sentencia = $this->dblink->prepare($sql);
                 
-                $ccod_visitas = $this->ccod_visitas();
+                //$ccod_visitas = $this->ccod_visitas();
                 $ccod_cliente = $this->ccod_cliente();
                 $lat_dir = $this->lat_dir();
                 $long_dir = $this->long_dir();
@@ -110,7 +110,7 @@ class Visitas extends Conexion {
                 
                 
                 //Asignar un valor a cada parametro
-                $sentencia->bindParam(":p_ccod_visitas", $ccod_visitas);
+                $sentencia->bindParam(":p_ccod_visitas", $nuevoCodigoArticulo);
                 $sentencia->bindParam(":p_ccod_cliente", $ccod_cliente);
                 $sentencia->bindParam(":p_lat_dir", $lat_dir);
                 $sentencia->bindParam(":p_long_dir", $long_dir);
