@@ -13,7 +13,7 @@ $token = $_POST["token"];
 try {
   // if(validarToken($token)){ //token válido
        
-                $ccod_visitas = $_POST["ccod_visitas"];
+                //$ccod_visitas = $_POST["ccod_visitas"];
                 $ccod_cliente = $_POST["ccod_cliente"];
                 $lat_dir = $_POST["lat_dir"];
                 $long_dir = $_POST["long_dir"];
@@ -22,7 +22,7 @@ try {
          
      
      $obj = new Visitas();
-     $obj->setCcod_visitas($ccod_visitas);
+     //$obj->setCcod_visitas($ccod_visitas);
      $obj->setCcod_cliente($ccod_cliente);
      $obj->setLat_dir($lat_dir);
      $obj->setLong_dir($long_dir);
