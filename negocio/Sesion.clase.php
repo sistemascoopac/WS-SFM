@@ -28,7 +28,8 @@ class Sesion extends Conexion {
         try {
             
             
-            $sql = "select * from f_validar_sesion(:p_usuario, :p_clave);";
+            
+           $sql = " execute prc_inicio_sesion @p_usuario =:p_usuario,@p_clave=:p_clave";
             $sentencia = $this->dblink->prepare($sql);
             
             $usuario= $this->getUsuario();
