@@ -18,8 +18,8 @@ class Conexion{
         //echo "Conexión cerrada";
     }
     
-    protected function abrirConexion(){
-        $servidor = "pgsql:host=".SERVIDOR_BD.";port=".PUERTO_BD.";dbname=".NOMBRE_BD;
+     protected function abrirConexion(){
+        $servidor = "sqlsrv:server=".SERVIDOR_BD.";database=".NOMBRE_BD;
         $usuario = USUARIO_BD;
         $clave = CLAVE_BD;
         
