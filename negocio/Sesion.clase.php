@@ -37,6 +37,11 @@ class Sesion extends Conexion {
         die( print_r( sqlsrv_errors(), true));
         print('</pre>');
     }
+            
+            $tsql_callSP = "{call prc_inicio_sesion(?,?)}";
+            
+            
+            
              $usuario= $this->getUsuario();
             $clave= $this->getClave();
             
@@ -51,9 +56,9 @@ class Sesion extends Conexion {
         echo "Error in executing statement 3.\n";
         die( print_r( sqlsrv_errors(), true));
     }
-
+        return $stmt3;
     /*Free the statement and connection resources. */
-    sqlsrv_free_stmt($stmt3);
+    //sqlsrv_free_stmt($stmt3);
     sqlsrv_close($conn);
             
             
