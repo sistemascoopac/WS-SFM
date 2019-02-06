@@ -29,7 +29,7 @@ class Sesion extends Conexion {
             
           
             
-           $sql=" exec bd_sfm_astudio.dbo.prc_inicio_sesion @p_usuario='rperez' , @p_clave='202cb962ac59075b964b07152d234b70' ";
+           $sql=" call bd_sfm_astudio.dbo.prc_inicio_sesion @p_usuario='rperez' , @p_clave='202cb962ac59075b964b07152d234b70' ";
             
             $sentencia = $this->dblink->prepare($sql);
            
