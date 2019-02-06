@@ -17,10 +17,10 @@ try {
     $objSesion->setUsuario($usuario);
     $objSesion->setClave($clave);
     
-    $resultado = $objSesion->validarSesion();
+   // $resultado = $objSesion->validarSesion();
     
-    $foto = $objSesion->obtenerFoto($resultado["dato"]);
-    $resultado["foto"] = $foto;
+   // $foto = $objSesion->obtenerFoto($resultado["dato"]);
+   // $resultado["foto"] = $foto;
     
     
     //gg
