@@ -27,21 +27,17 @@ class Sesion extends Conexion {
      public function validarSesion() {
         try {
             
-            $procedure_params = array(
-     array(&$myparams['p_usuario'], SQLSRV_PARAM_OUT),
-     array(&$myparams['p_clave'], SQLSRV_PARAM_OUT)
-            );
+           $sql=" select * from EMPLEADO ";
             
-           $sql = " exec prc_inicio_sesion @p_usuario=? , @p_clave=? ";
-            //$sentencia = $this->dblink->prepare($sql);
-            $sentencia= $this->dblink->sqlsrv_prepare($sql,$procedure_params);
+            $sentencia = $this->dblink->prepare($sql);
+           
             
             
-           // $usuario= $this->getUsuario();
-            //$clave= $this->getClave();
+            $usuario= $this->getUsuario();
+            $clave= $this->getClave();
             
-           // $sentencia->bindParam(":p_usuario", $usuario);
-           // $sentencia->bindParam(":p_clave", $clave);
+            $sentencia->bindParam(":p_usuario", $usuario);
+            $sentencia->bindParam(":p_clave", $clave);
             $sentencia->execute();
             return $sentencia->fetch(PDO::FETCH_ASSOC);
             
