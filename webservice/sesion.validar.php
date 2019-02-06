@@ -40,5 +40,5 @@ try {
     
 } catch (Exception $exc) {
     
-    Funciones::imprimeJSON(500, $exc->getMessage(), "b");
+    Funciones::imprimeJSON(502, $exc->getMessage(), "b");
 }
