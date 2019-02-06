@@ -27,9 +27,9 @@ try {
     if($resultado["estado"] == 200){
         isset($resultado["estado"]);
         //Generar un token de seguridad
-        require_once 'token.generar.php';
-        $token = generarToken(null, 60*60);
-        $resultado["token"] = $token;
+       // require_once 'token.generar.php';
+       // $token = generarToken(null, 60*60);      
+        //$resultado["token"] = $token;
      
         Funciones::imprimeJSON(200, "Bienvenido a la aplicación móvil", $resultado);
     }else{
@@ -40,5 +40,5 @@ try {
     
 } catch (Exception $exc) {
     
-    Funciones::imprimeJSON(500, $exc->getMessage(), "");
+    Funciones::imprimeJSON(500, $exc->getMessage(), "b");
 }
