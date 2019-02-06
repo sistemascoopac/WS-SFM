@@ -27,10 +27,15 @@ class Sesion extends Conexion {
      public function validarSesion() {
         try {
             
+            $procedure_params = array(
+     array(&$myparams['p_usuario'], SQLSRV_PARAM_OUT),
+     array(&$myparams['p_clave'], SQLSRV_PARAM_OUT)
+            );
             
+           $sql = " exec prc_inicio_sesion @p_usuario=? , @p_clave=? ";
+            //$sentencia = $this->dblink->prepare($sql);
+            $sentencia= $this->dblink->sqlsrv_prepare($sql,$procedure_params);
             
-           $sql = " exec prc_inicio_sesion @p_usuario='rperez' , @p_clave='202cb962ac59075b964b07152d234b70' ";
-            $sentencia = $this->dblink->prepare($sql);
             
            // $usuario= $this->getUsuario();
             //$clave= $this->getClave();
