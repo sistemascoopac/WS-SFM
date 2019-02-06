@@ -26,20 +26,25 @@ class Sesion extends Conexion {
     
      public function validarSesion() {
         try {
+            $conecta = mssql_connect ("190.233.55.167", "sa", "CSFM_2018*");
+            mssql_select_db("bd_sfm_astudio");
+            $db= "bd_sfm_astudio";
+            $sp= mssql_init("prc_inicio_sesion");
+           //$sql=" call bd_sfm_astudio.dbo.prc_inicio_sesion @p_usuario='rperez' , @p_clave='202cb962ac59075b964b07152d234b70' ";
             
-           $sql=" call bd_sfm_astudio.dbo.prc_inicio_sesion @p_usuario='rperez' , @p_clave='202cb962ac59075b964b07152d234b70' ";
-            
-            $sentencia = $this->dblink->prepare($sql);
+           // $sentencia = $this->dblink->prepare($sql);
            
             
             
             $usuario= $this->getUsuario();
             $clave= $this->getClave();
-            
+            mssql_bind($sp, "@p_usuario", $usuario, SQLVARCHAR);
+            mssql_bind($sp, "@p_clave", $clave, SQLVARCHAR);
             //$sentencia->bindParam(":p_usuario", $usuario);
            // $sentencia->bindParam(":p_clave", $clave);
-            $sentencia->execute();
-            return $sentencia->fetch(PDO::FETCH_ASSOC);
+            //$sentencia->execute();
+            //return $sentencia->fetch(PDO::FETCH_ASSOC);
+           return $data = mssql_fetch_row(mssql_execute($sp));
             
             
             
