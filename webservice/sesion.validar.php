@@ -3,10 +3,10 @@
 require_once '../negocio/Sesion.clase.php';
 require_once '../util/funciones/Funciones.clase.php';
 
-if (! isset($_POST["usuario"]) || ! isset($_POST["clave"])){
-    Funciones::imprimeJSON(500, "Falta completar los datos requeridos", "");
-    exit();
-}
+//if (! isset($_POST["usuario"]) || ! isset($_POST["clave"])){
+  //  Funciones::imprimeJSON(500, "Falta completar los datos requeridos", "");
+    //exit();
+//}
 
 $usuario = $_POST["usuario"];
 $clave = $_POST["clave"];
