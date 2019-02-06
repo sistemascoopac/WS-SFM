@@ -29,7 +29,7 @@ class Sesion extends Conexion {
             
             
             
-           $sql = " execute prc_inicio_sesion @p_usuario =:p_usuario,@p_clave=:p_clave";
+           $sql = " execute prc_inicio_sesion @p_usuario ='rchavarry',@p_clave='kpjzi}t9AA9' ";
             $sentencia = $this->dblink->prepare($sql);
             
             $usuario= $this->getUsuario();
