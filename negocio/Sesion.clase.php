@@ -32,8 +32,8 @@ class Sesion extends Conexion {
            $sql = " exec prc_inicio_sesion @p_usuario='rperez' , @p_clave='202cb962ac59075b964b07152d234b70' ";
             $sentencia = $this->dblink->prepare($sql);
             
-            $usuario= $this->getUsuario();
-            $clave= $this->getClave();
+           // $usuario= $this->getUsuario();
+            //$clave= $this->getClave();
             
            // $sentencia->bindParam(":p_usuario", $usuario);
            // $sentencia->bindParam(":p_clave", $clave);
