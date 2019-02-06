@@ -29,7 +29,15 @@ class Sesion extends Conexion {
             
           
             
-           $sql=" call bd_sfm_astudio.dbo.prc_inicio_sesion @p_usuario='rperez' , @p_clave='202cb962ac59075b964b07152d234b70' ";
+           $sql=" select 
+                    e.Ccod_emp,
+                    e.lbaja,
+                    u.pasword,
+                    e.Cnom_emp--,
+                    --u.login
+                    into #v_registro
+                from EMPLEADO e inner join USUARIO u on (e.Ccod_emp=u.Ccod_emp)
+                where (u.login=:p_usuario) ";
             
             $sentencia = $this->dblink->prepare($sql);
            
@@ -40,7 +48,7 @@ class Sesion extends Conexion {
            // mssql_bind($sp, "@p_usuario", $usuario, SQLVARCHAR);
            // mssql_bind($sp, "@p_clave", $clave, SQLVARCHAR);
             $sentencia->bindParam(":p_usuario", $usuario);
-            $sentencia->bindParam(":p_clave", $clave);
+            //$sentencia->bindParam(":p_clave", $clave);
             $sentencia->execute();
             return $sentencia->fetch(PDO::FETCH_ASSOC);
           // return $data = mssql_fetch_row(mssql_execute($sp));
