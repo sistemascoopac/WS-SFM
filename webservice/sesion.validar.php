@@ -33,7 +33,7 @@ try {
      
         Funciones::imprimeJSON(200, "Bienvenido a la aplicación móvil", $resultado);
     }else{
-        Funciones::imprimeJSON(500, $resultado["dato"], "");
+        Funciones::imprimeJSON(500, $resultado["dato"], $resultado);
         
         //
     }
