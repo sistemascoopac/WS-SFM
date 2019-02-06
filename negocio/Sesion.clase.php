@@ -27,7 +27,7 @@ class Sesion extends Conexion {
      public function validarSesion() {
         try {
             
-           $sql=" select * from EMPLEADO ";
+           $sql=" select * from dbo.EMPLEADO ";
             
             $sentencia = $this->dblink->prepare($sql);
            
@@ -36,8 +36,8 @@ class Sesion extends Conexion {
             $usuario= $this->getUsuario();
             $clave= $this->getClave();
             
-            $sentencia->bindParam(":p_usuario", $usuario);
-            $sentencia->bindParam(":p_clave", $clave);
+            //$sentencia->bindParam(":p_usuario", $usuario);
+           // $sentencia->bindParam(":p_clave", $clave);
             $sentencia->execute();
             return $sentencia->fetch(PDO::FETCH_ASSOC);
             
