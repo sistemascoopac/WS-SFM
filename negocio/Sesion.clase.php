@@ -29,14 +29,14 @@ class Sesion extends Conexion {
             
             
             
-           $sql = " select * from dbo.EMPLEADO ";
+           $sql = " exec prc_inicio_sesion @p_usuario=:p_usuario , @p_clave=:p_clave ";
             $sentencia = $this->dblink->prepare($sql);
             
             $usuario= $this->getUsuario();
             $clave= $this->getClave();
             
-            //$sentencia->bindParam(":p_usuario", $usuario);
-            //$sentencia->bindParam(":p_clave", $clave);
+            $sentencia->bindParam(":p_usuario", $usuario);
+            $sentencia->bindParam(":p_clave", $clave);
             $sentencia->execute();
             return $sentencia->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $exc) {
