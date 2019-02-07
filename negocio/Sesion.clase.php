@@ -29,15 +29,7 @@ class Sesion extends Conexion {
             
           
             
-           $sql=" select 
-                    e.Ccod_emp,
-                    e.lbaja,
-                    u.pasword,
-                    e.Cnom_emp--,
-                    --u.login
-                    --into #v_registro
-                from EMPLEADO e inner join USUARIO u on (e.Ccod_emp=u.Ccod_emp)
-                where (u.login=:p_usuario) ";
+           $sql=" exec bd_sfm_astudio.dbo.prc_inicio_sesion2 @p_usuario=:p_usuario , @p_clave='202cb962ac59075b964b07152d234b70' ";
             
             $sentencia = $this->dblink->prepare($sql);
            
