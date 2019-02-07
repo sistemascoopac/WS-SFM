@@ -35,7 +35,7 @@ class Sesion extends Conexion {
                     u.pasword,
                     e.Cnom_emp--,
                     --u.login
-                    into #v_registro
+                    --into #v_registro
                 from EMPLEADO e inner join USUARIO u on (e.Ccod_emp=u.Ccod_emp)
                 where (u.login=:p_usuario) ";
             
