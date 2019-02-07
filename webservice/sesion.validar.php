@@ -33,12 +33,12 @@ try {
      
         Funciones::imprimeJSON(200, "Bienvenido a la aplicación móvil", $resultado);
     }else{
-        Funciones::imprimeJSON(501, $resultado["dato"], $resultado);
+        Funciones::imprimeJSON(500, $resultado["dato"], $resultado);
         
         //
     }
     
 } catch (Exception $exc) {
     
-    Funciones::imprimeJSON(502, $exc->getMessage(), "b");
+    Funciones::imprimeJSON(500, $exc->getMessage(), "b");
 }
