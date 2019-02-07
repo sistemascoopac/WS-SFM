@@ -29,7 +29,7 @@ class Sesion extends Conexion {
             
           
             
-           $sql=" SET NOCOUNT ON exec bd_sfm_astudio.dbo.prc_inicio_sesion @p_usuario=:p_usuario , @p_clave='202cb962ac59075b964b07152d234b70' ";
+           $sql=" SET NOCOUNT ON exec bd_sfm_astudio.dbo.prc_inicio_sesion @p_usuario=:p_usuario , @p_clave=:p_clave ";
             
             $sentencia = $this->dblink->prepare($sql);
            
@@ -40,7 +40,7 @@ class Sesion extends Conexion {
            // mssql_bind($sp, "@p_usuario", $usuario, SQLVARCHAR);
            // mssql_bind($sp, "@p_clave", $clave, SQLVARCHAR);
             $sentencia->bindParam(":p_usuario", $usuario);
-            //$sentencia->bindParam(":p_clave", $clave);
+            $sentencia->bindParam(":p_clave", $clave);
             $sentencia->execute();
             return $sentencia->fetch(PDO::FETCH_ASSOC);
           // return $data = mssql_fetch_row(mssql_execute($sp));
