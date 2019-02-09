@@ -29,7 +29,7 @@ class Sesion extends Conexion {
             
           
             
-           $sql=" SET NOCOUNT ON exec bd_sfm_astudio.dbo.prc_inicio_sesion @p_usuario=:p_usuario , @p_clave=:p_clave ";
+           $sql=" SET NOCOUNT ON exec bd_sfm_astudio2.dbo.prc_inicio_sesion @p_usuario=:p_usuario , @p_clave=:p_clave ";
             
             $sentencia = $this->dblink->prepare($sql);
            
