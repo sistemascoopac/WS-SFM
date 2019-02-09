@@ -21,7 +21,7 @@ try {
             $foto = $obj->obtenerFoto($resultado[$i]["Ccod_cliente"]);
         
         $datosSocios = array(
-            "ccod_cliente" => $resultado[$i]["Ccod_cliente"],
+            "ccod_cliente" => $resultado[$i]["ccod_cliente"],
             "nombre_completo" => $resultado[$i]["nombre_completo"],
             "ccod_cliente" => $resultado[$i]["Ccod_cliente"],
             "cdni_cliente" => $resultado[$i]["Cdni_cliente"],
