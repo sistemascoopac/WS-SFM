@@ -18,10 +18,10 @@ try {
         $listaSocio = array();
         
         for($i = 0; $i < count($resultado); $i++){
-            $foto = $obj->obtenerFoto($resultado[$i]["Ccod_cliente"]);
+            $foto = $obj->obtenerFoto($resultado[$i]["ccod_cliente"]);
         
         $datosSocios = array(
-            "ccod_cliente" => $resultado[$i]["Ccod_cliente"],
+            "ccod_cliente" => $resultado[$i]["ccod_cliente"],
             "nombre_completo" => $resultado[$i]["nombre_completo"],            
             "cdni_cliente" => $resultado[$i]["Cdni_cliente"],
             "cdir_cliente" => $resultado[$i]["Cdir_cliente"],
