@@ -392,7 +392,7 @@ class Cliente extends Conexion {
                 cliente  
 		where 
                 lbaja='0' and
-		    lower(ccod_cliente) like :p_cod ";
+		    lower(Ccod_cliente) like :p_cod ";
             
             $sentencia = $this->dblink->prepare($sql);
             $cod = '%'.  strtolower($cod).'%';
