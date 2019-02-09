@@ -27,8 +27,8 @@ try {
             "cdni_cliente" => $resultado[$i]["Cdni_cliente"],
             "cdir_cliente" => $resultado[$i]["Cdir_cliente"],
             "ctel_cliente" => $resultado[$i]["Ctel_cliente"],
-            "dependientes" => $resultado[$i]["Cdependientes_cliente"],
-            "ingresos" => $resultado[$i]["Cingreso_cliente"],
+            "dependientes" => $resultado[$i]["cdependientes_cliente"],
+            "ingresos" => $resultado[$i]["cingreso_cliente"],
             "lat_dir" => $resultado[$i]["latitud"],
             "long_dir" => $resultado[$i]["longitud"],
             "foto" => $foto
