@@ -348,7 +348,7 @@ class Cliente extends Conexion {
         try {
             $sql = "
 		select 
-                ccod_cliente,
+                Ccod_cliente,
               concat  (Cnom_cliente,' ',Capp_cliente,' ',Capm_cliente )  as nombre_completo,
                 Cdni_cliente,
                 Cdir_cliente,
