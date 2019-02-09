@@ -150,15 +150,15 @@ class Cliente extends Conexion {
         try {
             $sql = "
                 select 
-                ccod_cliente,
-                (cnom_cliente ||' '||capp_cliente||' '||capm_cliente ) ::character varying as nombre_completo,
-                cdni_cliente,
-                cdir_cliente,
-                ctel_cliente,
-		ingreso,
-		latitud,
-		longitud,
-		dependientes
+               Ccod_cliente,
+              concat  (Cnom_cliente,' ',Capp_cliente,' ',Capm_cliente )  as nombre_completo,
+                Cdni_cliente,
+                Cdir_cliente,
+                Ctel_cliente,
+				Cingreso_cliente,
+				latitud,
+				longitud,
+				Cdependientes_cliente
                 from
                 cliente  
 		where 
