@@ -379,20 +379,20 @@ class Cliente extends Conexion {
         try {
             $sql = "
 		select 
-               Ccod_cliente,
+               ccod_cliente,
               concat  (Cnom_cliente,' ',Capp_cliente,' ',Capm_cliente )  as nombre_completo,
                 Cdni_cliente,
                 Cdir_cliente,
                 Ctel_cliente,
-				Cingreso_cliente,
+				cingreso_cliente,
 				latitud,
 				longitud,
-				Cdependientes_cliente
+				cdependientes_cliente
                 from
                 cliente  
 		where 
                 lbaja='0' and
-		    lower(Ccod_cliente) like :p_cod ";
+		    lower(ccod_cliente) like :p_cod ";
             
             $sentencia = $this->dblink->prepare($sql);
             $cod = '%'.  strtolower($cod).'%';
