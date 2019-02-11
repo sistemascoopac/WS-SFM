@@ -5,6 +5,7 @@ require_once 'json.hpack.php';
 class Funciones {
     
     public static $DIRECCION_WEB_SERVICE = "https://ws-coopacsfmapp.azurewebsites.net/webservice";
+   public static $DIRECCION_WEB_SERVICE_FOTOS="https://ws-coopacsfm.herokuapp.com/webservice";
 
     public static function mensaje($mensaje, $tipo, $archivoDestino="", $tiempo=0) {
         $estiloMensaje = "";
