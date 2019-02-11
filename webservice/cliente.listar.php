@@ -25,9 +25,9 @@ try {
         $datosSocios = array(
             "ccod_cliente" => $resultado[$i]["ccod_cliente"],
             "nombre_completo" => $resultado[$i]["nombre_completo"],            
-            "cdni_cliente" => $resultado[$i]["cdni_cliente"],
-            "cdir_cliente" => $resultado[$i]["cdir_cliente"],
-            "ctel_cliente" => $resultado[$i]["ctel_cliente"],
+            "cdni_cliente" => $resultado[$i]["Cdni_cliente"],
+            "cdir_cliente" => $resultado[$i]["Cdir_cliente"],
+            "ctel_cliente" => $resultado[$i]["Ctel_cliente"],
             "dependientes" => $resultado[$i]["Cdependientes_cliente"],
             "ingresos" => $resultado[$i]["Cingreso_cliente"],
              "lat_dir" => $resultado[$i]["latitud"],
