@@ -12,7 +12,7 @@ if (! isset($_POST["token"])){
 $token = $_POST["token"];
 $p_ccod_cliente = $_POST["p_ccod_cliente"];
 try {
-    if(validarToken($token)){
+   // if(validarToken($token)){
         $obj = new Cliente();
         $resultado = $obj->cargarDatosClienteCodigo($p_ccod_cliente);
         $listaSocio = array();
@@ -38,7 +38,7 @@ try {
     
         Funciones::imprimeJSON(200, "", $listaSocio);
        
-    }
+   // }
     
     
 } catch (Exception $exc) {
