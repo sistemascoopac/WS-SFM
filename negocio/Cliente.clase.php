@@ -422,7 +422,7 @@ class Cliente extends Conexion {
         if($foto == "none"){
             return $foto;
         }else{
-            return Funciones::$DIRECCION_WEB_SERVICE.$foto;
+            return Funciones::$DIRECCION_WEB_SERVICE_FOTOS.$foto;
         }
     }
 }
