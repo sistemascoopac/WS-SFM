@@ -13,7 +13,7 @@ $token = $_POST["token"];
 $p_ccod_cliente = $_POST["p_ccod_cliente"];
 try {  
         
-    if(validarToken($token)){
+    //if(validarToken($token)){
         $obj = new Cliente();
         
         $resultado = $obj->Listar($p_ccod_cliente);
@@ -40,7 +40,7 @@ try {
     
         Funciones::imprimeJSON(200, "", $listaSocio);
        
-    }
+    //}
     
 } catch (Exception $exc) {
     
