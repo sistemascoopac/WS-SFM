@@ -409,7 +409,7 @@ class Cliente extends Conexion {
 	
 	
 	public function  obtenerFoto($ccod){
-        $foto = "/imagenes_socios/".$ccod;
+        $foto = "imagenes_socios/".$ccod;
         if(file_exists($foto.".JPG")){
             $foto = $foto.".JPG";
         }else{
