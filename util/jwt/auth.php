@@ -37,6 +37,7 @@ class Auth
         if($decode->aud !== self::Aud())
         {
           throw new Exception("Invalid user logged in.");
+            return true;
         }else{
           return true;
         }
