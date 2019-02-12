@@ -17,16 +17,14 @@ try {
                 $ccod_cliente = $_POST["ccod_cliente"];
                 $lat_dir = $_POST["lat_dir"];
                 $long_dir = $_POST["long_dir"];
-                $foto= $_POST["foto"];
+               
                 $ccod_empleado= $_POST["ccod_empleado"];
          
      
-     $obj = new Visitas();
-     //$obj->setCcod_visitas($ccod_visitas);
+     $obj = new Visitas();     
      $obj->setCcod_cliente($ccod_cliente);
      $obj->setLat_dir($lat_dir);
-     $obj->setLong_dir($long_dir);
-     $obj->setFoto($foto);
+     $obj->setLong_dir($long_dir);    
      $obj->setCcod_empleado($ccod_empleado);
      
      
