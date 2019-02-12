@@ -11,7 +11,7 @@ if (! isset($_POST["token"])){
 $token = $_POST["token"];
 
 try {
-   if(validarToken($token)){ //token válido
+  // if(validarToken($token)){ //token válido
      $p_dir=$_POST["p_dir"];
      $p_ctel=$_POST["p_ctel"];
      $p_ing=$_POST["p_ing"];
@@ -44,7 +44,7 @@ try {
     
        
        
-   }
+  // }
 } catch (Exception $exc) {
     $mensajeError = $exc ->getMessage();
     $position = strpos($mensajeError, "Raise exception");
