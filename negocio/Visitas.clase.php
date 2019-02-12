@@ -67,7 +67,7 @@ class Visitas extends Conexion {
         $this->dblink->beginTransaction();
         
         try {
-            $sql = "select * from f_generar_correlativo('visitas') as nc";
+            $sql = "SET NOCOUNT ON exec bd_sfm_astudio2.dbo.f_generar_correlativo('VISITAS') as nc";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
             $resultado = $sentencia->fetch();
@@ -77,21 +77,19 @@ class Visitas extends Conexion {
                 $this->setCcod_visitas($nuevoCodigoArticulo);
                 
                 $sql = "
-                        INSERT INTO public.visitas
+                        INSERT INTO VISITAS
                     (
-                        ccod_visitas,
-                         ccod_cliente,
+                        Ccod_visitas,
+                        Ccod_cliente,
                           lat_dir,
-                           long_dir,
-                            foto,
-                             ccod_empleado
+                           long_dir,                           
+                             Ccod_empleado
                      )
                         VALUES (
                        :p_ccod_visitas,
                          :p_ccod_cliente,
                           :p_lat_dir,
-                           :p_long_dir,
-                            :p_foto,
+                           :p_long_dir,                            
                              :p_ccod_empleado
                              );
 
@@ -104,7 +102,7 @@ class Visitas extends Conexion {
                  $ccod_cliente = $this->getCcod_cliente();
                 $lat_dir = $this->getLat_dir();
                 $long_dir = $this->getLong_dir();
-                $foto= $this->getFoto();
+               
                 $ccod_empleado= $this->getCcod_empleado();
                 
                 
@@ -113,8 +111,7 @@ class Visitas extends Conexion {
                 $sentencia->bindParam(":p_ccod_visitas", $nuevoCodigoArticulo);
                 $sentencia->bindParam(":p_ccod_cliente", $ccod_cliente);
                 $sentencia->bindParam(":p_lat_dir", $lat_dir);
-                $sentencia->bindParam(":p_long_dir", $long_dir);
-                $sentencia->bindParam(":p_foto", $foto);
+                $sentencia->bindParam(":p_long_dir", $long_dir);                
                 $sentencia->bindParam(":p_ccod_empleado", $ccod_empleado);
                 
                 
@@ -123,7 +120,7 @@ class Visitas extends Conexion {
                 
                 
                 //Actualizar el correlativo en +1
-                $sql = "update correlativo set numero = numero + 1 where tabla = 'visitas'";
+                $sql = "update correlativo set numero = numero + 1 where tabla = 'VISITAS'";
                 $sentencia = $this->dblink->prepare($sql);
                 $sentencia->execute();
                 
