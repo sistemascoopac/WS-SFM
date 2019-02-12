@@ -51,6 +51,6 @@ try {
     if($position>0){
         $mensajeError = substr($mensajeError, $position+27, strlen($mensajeError));
     }
-    Funciones::imprimeJSON(500, "poque", "asas1");
+    //Funciones::imprimeJSON(500, "poque", "asas1");
     Funciones::imprimeJSON(500, $mensajeError, "asas");
 }
