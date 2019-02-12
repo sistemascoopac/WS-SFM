@@ -67,7 +67,7 @@ class Visitas extends Conexion {
         $this->dblink->beginTransaction();
         
         try {
-            $sql = "SET NOCOUNT ON exec bd_sfm_astudio2.dbo.f_generar_correlativo('VISITAS') as nc";
+            $sql = "SET NOCOUNT ON exec bd_sfm_astudio2.dbo.f_generar_correlativo 'VISITAS' ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
             $resultado = $sentencia->fetch();
