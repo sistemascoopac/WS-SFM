@@ -212,12 +212,12 @@ class Cliente extends Conexion {
 			
 		//	";
 
-		 $sql=" UPDATE public.cliente "
+		 $sql=" UPDATE CLIENTE  "
                      . " SET  "
                      . " cdir_cliente= :p_dir, "
                      . " ctel_cliente= :p_ctel, "
-                     . " ingreso= :p_ing, "
-                     . " dependientes= :p_dep, "
+                     . " Cingreso_cliente= :p_ing, "
+                     . " Cdependientes_cliente= :p_dep, "
                      . " latitud= :p_lati, "
                      . " longitud= :p_longi "
                      . " WHERE ccod_cliente= :p_cod ";
