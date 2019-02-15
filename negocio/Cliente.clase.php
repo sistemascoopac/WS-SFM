@@ -347,7 +347,7 @@ class Cliente extends Conexion {
     public function cargarDatosClienteNombre($nombre) {
         try {
             $sql = "
-		select 
+		select top(200)
                 ccod_cliente,
               concat  (Cnom_cliente,' ',Capp_cliente,' ',Capm_cliente )  as nombre_completo,
                 Cdni_cliente,
@@ -378,7 +378,7 @@ class Cliente extends Conexion {
     public function cargarDatosClienteCodigo($cod) {
         try {
             $sql = "
-		select 
+		select top(200)
                ccod_cliente,
               concat  (Cnom_cliente,' ',Capp_cliente,' ',Capm_cliente )  as nombre_completo,
                 Cdni_cliente,
