@@ -95,7 +95,7 @@ class Simulador extends Conexion{
             $sentencia->bindParam(":p_monto", $monto);
             $sentencia->bindParam(":p_ncuotas", $ncuotas);
             $sentencia->execute();
-            return $sentencia->fetch(PDO::FETCH_ASSOC);
+            return $sentencia->fetchAll(PDO::FETCH_ASSOC);
             
             
 
