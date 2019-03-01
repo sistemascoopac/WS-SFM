@@ -44,10 +44,10 @@ public function listar($cat){
     try{
         
     $sql = "
-                 SELECT     p.Ccod_categoria_producto, p.Ccod_producto, p.Cdes_producto,MIN(t.nmin),MAX(t.nmax),MIN(t.Rinicial),MAX(t.Rfinal)
+                 SELECT     p.Ccod_categoria_producto, p.Ccod_producto, p.Cdes_producto,p.Cestado,MIN(t.nmin)as nmin,MAX(t.nmax)as nmax,MIN(t.Rinicial)as Rinicial,MAX(t.Rfinal)as Rfinal
                 FROM         PRODUCTO p inner join TINTERES t on (p.Ccod_producto=t.Ccod_producto)
 				where p.Cestado=1 and p.Ccod_categoria_producto=:p_cat
-				group by  p.Ccod_categoria_producto, p.Ccod_producto, p.Cdes_producto
+				group by  p.Ccod_categoria_producto, p.Ccod_producto, p.Cdes_producto,p.Cestado
 
                     ";
             $sentencia = $this->dblink->prepare($sql);
