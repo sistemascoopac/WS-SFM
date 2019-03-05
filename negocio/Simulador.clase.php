@@ -81,7 +81,7 @@ class Simulador extends Conexion{
     public function GetData($producto,$monto,$ncuotas,$indicador){
         
         try {
-             $sql=" SET NOCOUNT ON exec bd_sfm_astudio2.dbo.prc_generar_cronograma @p_producto=:p_producto , @p_monto=:p_monto , @p_ncuotas=:p_ncuotas ,@p_indicador=:p_indicador";
+             $sql=" SET NOCOUNT ON exec bd_sfm_astudio2.dbo.prc_generar_cronograma @p_producto=:p_producto , @p_monto=:p_monto , @p_ncuotas=:p_ncuotas , @p_indicador=:p_indicador ";
             
             $sentencia = $this->dblink->prepare($sql);
            
